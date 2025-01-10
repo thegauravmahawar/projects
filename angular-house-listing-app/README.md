@@ -40,5 +40,5 @@ ng serve
 │   ├── index.html               #  app's top level HTML template
 │   ├── main.ts               # where the app starts running
 │   └── styles.css               # app's top level style sheet
-├── tsconfig.*               # files that describe the app's configuration to the TypeScript compiler
+└── tsconfig.*               # files that describe the app's configuration to the TypeScript compiler
 ```
