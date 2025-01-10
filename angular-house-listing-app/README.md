@@ -17,7 +17,7 @@ ng serve
 ```bash
 .
 ├── .angular                               # files required to build the Angular app
-├── .e2e                                   #  files used to test the app
+├── .e2e                                   # files used to test the app
 ├── BUILD.bazel
 ├── README.md
 ├── angular.json                           # describes the Angular app to the app building tools
@@ -37,7 +37,7 @@ ng serve
 │   │   ├── location-pin.svg
 │   │   └── logo.svg
 │   ├── favicon.ico
-│   ├── index.html                         #  app's top level HTML template
+│   ├── index.html                         # app's top level HTML template
 │   ├── main.ts                            # where the app starts running
 │   └── styles.css                         # app's top level style sheet
 └── tsconfig.*                             # files that describe the app's configuration to the TypeScript compiler
