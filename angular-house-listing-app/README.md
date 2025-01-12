@@ -60,3 +60,9 @@ In Angular, components have metadata that define its properties. When you create
 ```shell
 ng generate component home
 ```
+
+**Interfaces**
+
+`Interfaces` are custom data types for your app.
+
+Angular uses TypeScript to take advantage of working in a strongly typed programming environment. Strong type checking reduces the likelihood of one element in your app sending incorrectly formatted data to another.
