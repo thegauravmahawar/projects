@@ -70,3 +70,7 @@ Angular uses TypeScript to take advantage of working in a strongly typed program
 **Inputs**
 
 `Inputs` allow components to share data. The direction of the data sharing is from parent component to child component.
+
+**Services**
+
+Angular services provide a way for you to separate Angular app data and functions that can be used by multiple components in your app. To be used by multiple components, a service must be made injectable. Services that are injectable and used by a component become dependencies of that component. The component depends on those services and can't function without them.
