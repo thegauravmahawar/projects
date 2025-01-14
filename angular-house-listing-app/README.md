@@ -74,3 +74,13 @@ Angular uses TypeScript to take advantage of working in a strongly typed program
 **Services**
 
 Angular services provide a way for you to separate Angular app data and functions that can be used by multiple components in your app. To be used by multiple components, a service must be made injectable. Services that are injectable and used by a component become dependencies of that component. The component depends on those services and can't function without them.
+
+**Routing**
+
+The Angular Router enables users to declare routes and specify which component should be displayed on the screen if that route is requested by the application.
+
+Route parameters enable you to include dynamic information as a part of your route URL.
+
+The `routerLink` directive enables Angular's router to create dynamic links in the application. The value assigned to the `routerLink` is an array with two entries: the static portion of the path and the dynamic data.
+
+For the `routerLink` to work in the template, add a file level import of `RouterLink` and `RouterOutlet` from '@angular/router', then update the component `imports` array to include both `RouterLink` and `RouterOutlet`.
