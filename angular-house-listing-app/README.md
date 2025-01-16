@@ -1,5 +1,17 @@
 # House Listing Application
 
+## Reference
+
+- [Angular First App](https://angular.dev/tutorials/first-app)
+
+## Local setup
+
+**Install Angular**
+
+```shell
+npm install -g @angular/cli
+```
+
 **Install dependencies**
 
 ```shell
@@ -12,7 +24,7 @@ npm install
 ng serve
 ```
 
-**Project structure**
+## Project structure
 
 ```bash
 .
