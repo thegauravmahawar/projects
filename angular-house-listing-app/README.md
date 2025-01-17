@@ -55,11 +55,11 @@ ng serve
 └── tsconfig.*                             # files that describe the app's configuration to the TypeScript compiler
 ```
 
-**Angular Components**
+## Components
 
 Angular apps are built around components, which are Angular's building blocks. Components contain the code, HTML layout, and CSS style information that provide the function and appearance of an element in the app. In Angular, components can contain other components. An app's functions and appearance can be divided and partitioned into components.
 
-In Angular, components have metadata that define its properties. When you create your `HomeComponent`, you use these properties:
+In Angular, components have metadata that define its properties. When you create your component, you use these properties:
 
 - `selector`: to describe how Angular refers to the component in templates.
 - `standalone`: to describe whether the component requires a NgModule.
@@ -73,21 +73,21 @@ In Angular, components have metadata that define its properties. When you create
 ng generate component home
 ```
 
-**Interfaces**
+## Interfaces
 
 `Interfaces` are custom data types for your app.
 
 Angular uses TypeScript to take advantage of working in a strongly typed programming environment. Strong type checking reduces the likelihood of one element in your app sending incorrectly formatted data to another.
 
-**Inputs**
+## Inputs
 
 `Inputs` allow components to share data. The direction of the data sharing is from parent component to child component.
 
-**Services**
+## Services
 
 Angular services provide a way for you to separate Angular app data and functions that can be used by multiple components in your app. To be used by multiple components, a service must be made injectable. Services that are injectable and used by a component become dependencies of that component. The component depends on those services and can't function without them.
 
-**Routing**
+## Routing
 
 The Angular Router enables users to declare routes and specify which component should be displayed on the screen if that route is requested by the application.
 
