@@ -1,0 +1,16 @@
+services:
+  airbnb-clone-db:
+    image: 'postgres:latest'
+    volumes:
+      - airbnb-clone-data:/var/lib/postgresql/data
+    environment:
+      - 'POSTGRES_DB=airbnb-clone'
+      - 'POSTGRES_PASSWORD=airbnb'
+      - 'POSTGRES_USER=airbnb'
+    expose:
+      - '5436'
+    ports:
+      - '5436:5436'
+
+volumes:
+  airbnb-clone-data:
