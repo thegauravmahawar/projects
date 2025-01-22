@@ -4,8 +4,14 @@ logging:
     org.hibernate.SQL: DEBUG
     airbnbclonebackend: DEBUG
 spring:
+  docker:
+    compose:
+      enabled: true
+      file: compose.yaml
   profiles:
-    active: dev
+    active: local
+  messages:
+    basename: i18n/messages
   application:
     name: airbnb-clone-backend
   datasource:
@@ -17,6 +23,9 @@ spring:
     jpa:
       repositories:
         bootstrap-mode: deferred
+  flyway:
+    schema: airbnb-clone
+    validate-on-migrate: false
   jpa:
     open-in-view: false
     hibernate:
