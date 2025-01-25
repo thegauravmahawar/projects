@@ -23,9 +23,6 @@ spring:
     jpa:
       repositories:
         bootstrap-mode: deferred
-  flyway:
-    schema: airbnb-clone
-    validate-on-migrate: false
   jpa:
     open-in-view: false
     hibernate:
