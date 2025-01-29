@@ -1,0 +1,15 @@
+CREATE TABLE listing (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(256) NOT NULL,
+    description VARCHAR(256) NOT NULL,
+    guests INTEGER NOT NULL,
+    bedrooms INTEGER NOT NULL,
+    beds INTEGER NOT NULL,
+    bathrooms INTEGER NOT NULL,
+    price INTEGER NOT NULL,
+    category VARCHAR(256) NOT NULL,
+    location VARCHAR(256) NOT NULL,
+    landlord_id INTEGER NOT NULL REFERENCES users(id),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)
