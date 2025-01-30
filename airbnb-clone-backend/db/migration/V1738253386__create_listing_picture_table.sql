@@ -1,0 +1,9 @@
+CREATE TABLE listing_picture (
+    id SERIAL PRIMARY KEY,
+    listing_id INTEGER NOT NULL REFERENCES listing(id),
+    file BYTEA NOT NULL,
+    is_cover BOOLEAN NOT NULL,
+    file_content_type VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)
