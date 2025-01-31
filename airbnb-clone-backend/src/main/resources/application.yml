@@ -1,19 +1,19 @@
-logging:
-  level:
-    ROOT: INFO
-    org.hibernate.SQL: DEBUG
-    airbnbclonebackend: DEBUG
+#logging:
+#  level:
+#    ROOT: INFO
+#    org.hibernate.SQL: DEBUG
+#    airbnbclonebackend: DEBUG
 spring:
-  docker:
-    compose:
-      enabled: true
-      file: compose.yaml
+#  docker:
+#    compose:
+#      enabled: true
+#      file: compose.yaml
   profiles:
     active: local
   messages:
     basename: i18n/messages
-  application:
-    name: airbnb-clone-backend
+#  application:
+#    name: airbnb-clone-backend
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
@@ -29,7 +29,7 @@ spring:
       ddl-auto: validate
     properties:
       hibernate:
-        default_schema: airbnb
+        default_schema: public
   servlet:
     multipart:
       enabled: true
