@@ -8,6 +8,8 @@ import shoppingapplicationbackend.product.service.dao.Product;
 import shoppingapplicationbackend.product.service.repositories.ProductRepository;
 import shoppingapplicationbackend.product.service.resources.ProductResource;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -19,5 +21,10 @@ public class ProductService {
     public Product createProduct(ProductResource productResource) {
         Product product = productResource.getModel();
         return productRepository.save(product);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Product> getProducts() {
+        return productRepository.findAll();
     }
 }
