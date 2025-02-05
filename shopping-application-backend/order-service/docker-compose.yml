@@ -1,0 +1,14 @@
+version: '4'
+
+services:
+  postgres:
+    image: 'postgres:17-alpine'
+    container_name: postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      - 'POSTGRES_DB=order-service'
+      - 'POSTGRES_PASSWORD=order'
+      - 'POSTGRES_USER=order'
+    ports:
+      - '5436:5432'
