@@ -1,0 +1,14 @@
+version: '4'
+
+services:
+  postgres:
+    image: 'postgres:17-alpine'
+    container_name: inventory-db
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      - 'POSTGRES_DB=inventory-service'
+      - 'POSTGRES_PASSWORD=inventory'
+      - 'POSTGRES_USER=inventory'
+    ports:
+      - '5437:5432'
