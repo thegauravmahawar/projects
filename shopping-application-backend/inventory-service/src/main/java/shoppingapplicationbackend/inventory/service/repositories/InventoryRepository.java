@@ -7,5 +7,5 @@ import shoppingapplicationbackend.inventory.service.dao.Inventory;
 @Repository
 public interface InventoryRepository extends JpaRepository<Inventory, Long> {
 
-    boolean existsBySkuCodeAndQuantityIsGreaterThan(String skuCode, int quantity);
+    boolean existsBySkuCodeAndQuantityIsGreaterThanEqual(String skuCode, int quantity);
 }
