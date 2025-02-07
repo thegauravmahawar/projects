@@ -3,7 +3,7 @@ version: '4'
 services:
   mongodb:
     image: mongo:7.0.5
-    container_name: mongodb
+    container_name: product-db
     ports:
       - '27020:27017'
     environment:
