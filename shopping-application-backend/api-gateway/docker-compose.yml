@@ -1,15 +1,15 @@
 version: '4'
 
 services:
-  keycloak-db:
+  postgres:
     container_name: keycloak-db
     image: postgres:17-alpine
     volumes:
       - ./data:/var/lib/postgresql/data
     environment:
-      - 'POSTGRES_DB=inventory-service'
-      - 'POSTGRES_PASSWORD=inventory'
-      - 'POSTGRES_USER=inventory'
+      - 'POSTGRES_DB=keycloak-service'
+      - 'POSTGRES_PASSWORD=keycloak'
+      - 'POSTGRES_USER=keycloak'
     ports:
       - '5438:5432'
   keycloak:
@@ -18,6 +18,15 @@ services:
     command: [ "start-dev", "--import-realm" ]
     environment:
       DB_VENDOR: POSTGRESQL
-      DB_ADDR: 
+      DB_ADDR: postgresql
+      DB_DATABASE: keycloak-service
+      DB_USER: keycloak
+      DB_PASSWORD: keycloak
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8181:8080"
+    volumes:
+      - ./docker/keycloak/realms/:/opt/keycloak/data/import/
     depends_on:
-      - keycloak-db
+      - postgres
