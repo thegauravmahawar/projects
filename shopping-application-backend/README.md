@@ -11,7 +11,7 @@
 - TestContainers
 - Integration Tests
 - Flyway Migration
-- Feign
+- REST Client
 - Spring Cloud Gateway
 - OAuth2
 - Swagger Documentation
