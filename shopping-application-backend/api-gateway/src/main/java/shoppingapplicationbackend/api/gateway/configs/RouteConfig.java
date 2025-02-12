@@ -1,12 +1,16 @@
 package shoppingapplicationbackend.api.gateway.configs;
 
+import org.springframework.cloud.gateway.server.mvc.filter.CircuitBreakerFilterFunctions;
 import org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions;
 import org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.function.RequestPredicates;
 import org.springframework.web.servlet.function.RouterFunction;
 import org.springframework.web.servlet.function.ServerResponse;
+
+import java.net.URI;
 
 import static org.springframework.cloud.gateway.server.mvc.filter.FilterFunctions.setPath;
 
@@ -19,7 +23,11 @@ public class RouteConfig {
                 .route(
                         RequestPredicates.path("/api/products"),
                         HandlerFunctions.http("http://localhost:8080")
-                ).build();
+                )
+                .filter(CircuitBreakerFilterFunctions
+                        .circuitBreaker("productServiceCircuitBreaker", URI.create("forward:/fallback"))
+                )
+                .build();
     }
 
     @Bean
@@ -28,6 +36,9 @@ public class RouteConfig {
                 .route(
                         RequestPredicates.path("/aggregate/product-service/v3/api-docs"),
                         HandlerFunctions.http("http://localhost:8080")
+                )
+                .filter(CircuitBreakerFilterFunctions
+                        .circuitBreaker("productServiceSwaggerCircuitBreaker", URI.create("forward:/fallback"))
                 )
                 .filter(setPath("/api-docs"))
                 .build();
@@ -39,7 +50,11 @@ public class RouteConfig {
                 .route(
                         RequestPredicates.path("/api/orders"),
                         HandlerFunctions.http("http://localhost:8081")
-                ).build();
+                )
+                .filter(CircuitBreakerFilterFunctions
+                        .circuitBreaker("orderServiceCircuitBreaker", URI.create("forward:/fallback"))
+                )
+                .build();
     }
 
     @Bean
@@ -48,6 +63,9 @@ public class RouteConfig {
                 .route(
                         RequestPredicates.path("/aggregate/order-service/v3/api-docs"),
                         HandlerFunctions.http("http://localhost:8081")
+                )
+                .filter(CircuitBreakerFilterFunctions
+                        .circuitBreaker("orderServiceSwaggerCircuitBreaker", URI.create("forward:/fallback"))
                 )
                 .filter(setPath("/api-docs"))
                 .build();
@@ -59,7 +77,11 @@ public class RouteConfig {
                 .route(
                         RequestPredicates.path("/api/inventory"),
                         HandlerFunctions.http("http://localhost:8082")
-                ).build();
+                )
+                .filter(CircuitBreakerFilterFunctions
+                        .circuitBreaker("inventoryServiceCircuitBreaker", URI.create("forward:/fallback"))
+                )
+                .build();
     }
 
     @Bean
@@ -69,7 +91,19 @@ public class RouteConfig {
                         RequestPredicates.path("/aggregate/inventory-service/v3/api-docs"),
                         HandlerFunctions.http("http://localhost:8082")
                 )
+                .filter(CircuitBreakerFilterFunctions
+                        .circuitBreaker("inventoryServiceSwaggerCircuitBreaker", URI.create("forward:/fallback"))
+                )
                 .filter(setPath("/api-docs"))
+                .build();
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> fallbackRoute() {
+        return GatewayRouterFunctions.route("fallback-route")
+                .GET(
+                        "/fallback",
+                        request -> ServerResponse.status(HttpStatus.SERVICE_UNAVAILABLE).body("Service Unavailable."))
                 .build();
     }
 }

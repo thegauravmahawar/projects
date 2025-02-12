@@ -15,3 +15,4 @@
 - Spring Cloud Gateway
 - OAuth2
 - Swagger Documentation
+- Circuit Breaker Pattern
