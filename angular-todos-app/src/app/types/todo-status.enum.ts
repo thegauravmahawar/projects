@@ -1,3 +1,3 @@
 export enum TodoStatus {
-  INCOMPLETE, COMPLETE
+  ACTIVE, COMPLETE
 }
