@@ -22,6 +22,5 @@ export class HeaderComponent {
 
   createTodo(): void {
     this.todoService.createTodo(this.todo);
-
   }
 }
