@@ -8,6 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderEvent {
-
-    private String orderNumber;
+  private String orderNumber;
 }

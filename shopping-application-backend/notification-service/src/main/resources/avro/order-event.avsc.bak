@@ -1,0 +1,8 @@
+{
+    "type": "record",
+    "name": "OrderEvent",
+    "namespace": "shoppingapplicationbackend.notification.service.models",
+    "fields": [
+        { "name": "orderNumber", "type": "string" }
+    ]
+}
