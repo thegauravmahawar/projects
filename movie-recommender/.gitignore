@@ -1,0 +1,107 @@
+# Environment and IDE
+.env
+venv/
+env/
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.DS_Store
+
+# Python distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Angular
+angular-client/node_modules/
+angular-client/.angular/
+angular-client/dist/
+angular-client/tmp/
+angular-client/.vscode/
+angular-client/.idea/
+angular-client/npm-debug.log
+angular-client/package-lock.json
+angular-client/yarn.lock
+angular-client/yarn-error.log
+angular-client/.env
+angular-client/.env.*
+
+# FastAPI / MCP server
+mcp-server/venv/
+mcp-server/__pycache__/
+mcp-server/**/__pycache__/
+mcp-server/*.py[cod]
+mcp-server/*$py.class
+mcp-server/.env
+mcp-server/logs/
+mcp-server/chroma_db/
+
+# Data directories
+mcp-server/data/
+mcp-server/app/data/processed/
+!mcp-server/data/.gitkeep
+!mcp-server/app/data/processed/.gitkeep
+
+# ChromaDB
+chroma_db/
+
+# Chainlit
+.chainlit/
+.chainlit/config.toml
+
+# Gradio
+gradio_cached_examples/
+flagged/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Sphinx documentation
+docs/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Docker
+docker-compose.override.yml
+
+# Environments
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
