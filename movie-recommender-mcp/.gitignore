@@ -1,0 +1,37 @@
+# Environment and IDE
+.env
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.DS_Store
+
+# Python distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# FastAPI / MCP server
+chroma_db/
+logs/
+
+# Data directories
+data/
+app/data/processed/
+!data/.gitkeep
+!app/data/processed/.gitkeep

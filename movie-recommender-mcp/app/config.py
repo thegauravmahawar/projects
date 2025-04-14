@@ -2,6 +2,7 @@ import os
 from typing import List
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 
 class Settings:
@@ -16,6 +17,7 @@ class Settings:
         "http://localhost:4200",  # Angular app
         "http://localhost:3000",  # Chainlit
         "http://localhost:7860",  # Gradio
+        "*",  # For development
     ]
 
     # ChromaDB settings
@@ -31,7 +33,7 @@ class Settings:
 
     # Data settings
     MOVIE_DATA_SOURCE: str = os.getenv("MOVIE_DATA_SOURCE",
-                                        "https://files.grouplens.org/datasets/movielens/ml-latest-small.zip")
+                                       "https://files.grouplens.org/datasets/movielens/ml-latest-small.zip")
     DATA_DIR: str = "./data"
     PROCESSED_DATA_DIR: str = "./data/processed"
 
